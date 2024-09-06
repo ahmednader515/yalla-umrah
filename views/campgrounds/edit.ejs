@@ -1,0 +1,69 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">تعديل الخدمة</h1>
+    <div class="col-6 offset-3">
+        <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="title">العنوان</label>
+                <input class="form-control" type="text" id="title" name="campground[title]"
+                    value="<%=campground.title %>" required>
+                <div class="valid-feedback">
+                    يبدو جيدا
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">الموقع</label>
+                <input class="form-control" type="text" id="location" name="campground[location]"
+                    value="<%=campground.location %>" required>
+                <div class="valid-feedback">
+                    يبدو جيدا
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">الصورة (لينك)</label>
+                <input class="form-control" type="text" id="image" name="campground[image]"
+                    value="<%=campground.image %>" required>
+                <div class="valid-feedback">
+                    يبدو جيدا
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">سعر الخدمة</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="campground[price]" value="<%=campground.price %>"
+                        required><div class="valid-feedback">
+                        يبدو جيدا
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">الوصف</label>
+                <textarea class="form-control" type="text" id="description" name="campground[description]"
+                    required><%= campground.description%></textarea>
+                <div class="valid-feedback">
+                    يبدو جيدا
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label">نوع الخدمة</label>
+                <select class="form-control" name="campground[category]" id="category">
+                    <% for(let category of categories) { %>
+                        <option value="<%= category %>"><%= category %></option>
+                    <% } %>    
+                </select>
+                <div class="valid-feedback">
+                    يبدو جيدا
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-info">تعديل</button>
+            </div>
+        </form>
+
+    </div>
+</div>

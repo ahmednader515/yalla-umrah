@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+
+footer .container {
+    width: 80%;
+    margin: auto;
+    box-shadow: 5px 7px 88px 0px rgba(122,122,122,1);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+main {
+    width: 80% !important;
+    padding: 0 !important;
+}
+
+.btn {
+    border: 3px solid #399918 !important;
+    background-color: white !important;
+    color: black !important;
+    border-radius: 10px !important;
+    font-family: "Cairo", sans-serif;
+    font-weight: 800 !important;
+    cursor: pointer;
+}
+
+.btn-login {
+    margin: 25px 0;
+}
+
+.btn:hover {
+    background-color: #399918 !important;
+    color: white !important;
+    transition: .2s !important;
+}
+
+.btn:hover a {
+    color: white !important;
+}
+
+a {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+li {
+    margin: 20px 0 !important;
+}
+
+h5 {
+    margin: 20px 0 !important;
+}
+
+ul {
+    padding-right: 0 !important;
+}
+
+.navbar-brand {
+    margin-left: 25px !important;
+}
+/* 
+.row {
+    width: 100%;
+    margin: auto;
+    gap: 25px;
+} */
+
+.container {
+    margin: auto !important;
+}
+
+.card {
+    box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.46);
+    margin: 25px;
+    border-radius: 10px !important;
+}
+
+.fa-user {
+    font-size: 50px;
+}
+
+.fa-building {
+    font-size: 50px;
+}
+
+footer {
+    margin-top: 0 !important;
+}
+
+.form-label {
+    margin: 25px 0;
+}
+
+.form-control {
+    width: 50% !important;
+}
+
+form {
+    margin: 100px auto;
+}
+
+.alert {
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert p {
+    margin-bottom: 0 !important;
+}
+
+.alert button {
+    background-color: transparent;
+    border: 0;
+}
+
+.navBar {
+    position: relative;
+}
+
+.navBar .login {
+    position: absolute;
+    left: 0;
+}
+
+.service-img {
+    border-radius: 0 10px 10px 0;
+    height: 100% !important;
+}
+
+.service-text {
+    width: 90%;
+    margin: auto;
+}
+
+.service-text h1 {
+    margin: 50px auto;
+}
+
+.service-container {
+    margin-bottom: 100px;
+}
+
+.dashboard-container {
+    width: 95%;
+    margin: auto;
+}
+
+.button-container {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.service-container .form-control {
+    width: 100% !important;
+    margin: auto;
+}
+
+.service-container h1 {
+    margin-top: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .navBar .login {
+        position: relative;
+    }
+
+    .service-img {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .service-text {
+        width: 100%;
+        text-align: center;
+    }
+}

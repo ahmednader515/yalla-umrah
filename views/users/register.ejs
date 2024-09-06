@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') %>
+
+<form class="validated-form" action="/register" method="POST" novalidate>
+
+    <h1>أنشاء حساب مستخدم</h1>
+
+    <div class="mb-3">
+        <label class="form-label" for="username">اسم المستخدم</label>
+        <input class="form-control" type="text" id="username" name="username" required>
+        <div class="valid-feedback">
+        يبدو جيدا
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="email">البريد الأليكتروني</label>
+        <input class="form-control" type="email" id="email" name="email" required>
+        <div class="valid-feedback">
+        يبدو جيدا
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="password">كلمة السر</label>
+        <input class="form-control" type="password" id="password" name="password" required>
+        <div class="valid-feedback">
+        يبدو جيدا
+        </div>
+    </div>
+
+    <button class="btn btn-login">أنشاء حساب</button>
+
+</form>
