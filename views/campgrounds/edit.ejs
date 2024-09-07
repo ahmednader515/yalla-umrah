@@ -1,69 +1,102 @@
 <% layout('layouts/boilerplate')%>
+
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/nav.css">
+
 <div class="row">
-    <h1 class="text-center">تعديل الخدمة</h1>
+    <h1 class="text-center" style="margin-top: 100px;">تعديل الخدمة</h1>
     <div class="col-6 offset-3">
-        <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+        <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate class="validated-form">
+            <!-- Title Field -->
             <div class="mb-3">
                 <label class="form-label" for="title">العنوان</label>
-                <input class="form-control" type="text" id="title" name="campground[title]"
-                    value="<%=campground.title %>" required>
-                <div class="valid-feedback">
-                    يبدو جيدا
-                </div>
+                <input 
+                    class="form-control" 
+                    type="text" 
+                    id="title" 
+                    name="campground[title]" 
+                    value="<%= campground.title %>" 
+                    required
+                >
+                <div class="valid-feedback">يبدو جيدا</div>
             </div>
+
+            <!-- Location Field -->
             <div class="mb-3">
                 <label class="form-label" for="location">الموقع</label>
-                <input class="form-control" type="text" id="location" name="campground[location]"
-                    value="<%=campground.location %>" required>
-                <div class="valid-feedback">
-                    يبدو جيدا
-                </div>
+                <input 
+                    class="form-control" 
+                    type="text" 
+                    id="location" 
+                    name="campground[location]" 
+                    value="<%= campground.location %>" 
+                    required
+                >
+                <div class="valid-feedback">يبدو جيدا</div>
             </div>
+
+            <!-- Image Field -->
             <div class="mb-3">
                 <label class="form-label" for="image">الصورة (لينك)</label>
-                <input class="form-control" type="text" id="image" name="campground[image]"
-                    value="<%=campground.image %>" required>
-                <div class="valid-feedback">
-                    يبدو جيدا
-                </div>
+                <input 
+                    class="form-control" 
+                    type="text" 
+                    id="image" 
+                    name="campground[image]" 
+                    value="<%= campground.image %>" 
+                    required
+                >
+                <div class="valid-feedback">يبدو جيدا</div>
             </div>
+
+            <!-- Price Field -->
             <div class="mb-3">
                 <label class="form-label" for="price">سعر الخدمة</label>
                 <div class="input-group">
                     <span class="input-group-text" id="price-label">$</span>
-                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
-                        aria-describedby="price-label" name="campground[price]" value="<%=campground.price %>"
-                        required><div class="valid-feedback">
-                        يبدو جيدا
-                    </div>
+                    <input 
+                        type="number" 
+                        step="0.01" 
+                        class="form-control" 
+                        id="price" 
+                        placeholder="0.00" 
+                        aria-label="price" 
+                        aria-describedby="price-label" 
+                        name="campground[price]" 
+                        value="<%= campground.price %>" 
+                        required
+                    >
+                    <div class="valid-feedback">يبدو جيدا</div>
                 </div>
             </div>
 
+            <!-- Description Field -->
             <div class="mb-3">
                 <label class="form-label" for="description">الوصف</label>
-                <textarea class="form-control" type="text" id="description" name="campground[description]"
-                    required><%= campground.description%></textarea>
-                <div class="valid-feedback">
-                    يبدو جيدا
-                </div>
+                <textarea 
+                    class="form-control" 
+                    id="description" 
+                    name="campground[description]" 
+                    required
+                ><%= campground.description %></textarea>
+                <div class="valid-feedback">يبدو جيدا</div>
             </div>
 
+            <!-- Category Field -->
             <div class="mb-3">
-                <label for="category" class="form-label">نوع الخدمة</label>
+                <label class="form-label" for="category">نوع الخدمة</label>
                 <select class="form-control" name="campground[category]" id="category">
-                    <% for(let category of categories) { %>
-                        <option value="<%= category %>"><%= category %></option>
-                    <% } %>    
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category %>" <%= campground.category === category ? 'selected' : '' %>><%= category %></option>
+                    <% }) %>
                 </select>
-                <div class="valid-feedback">
-                    يبدو جيدا
-                </div>
+                <div class="valid-feedback">يبدو جيدا</div>
             </div>
 
+            <!-- Submit Button -->
             <div class="mb-3">
-                <button class="btn btn-info">تعديل</button>
+                <button class="btn btn-info" type="submit">تعديل</button>
             </div>
         </form>
-
     </div>
 </div>
