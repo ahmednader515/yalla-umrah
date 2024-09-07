@@ -23,7 +23,7 @@ const reviewRoutes = require('./routes/reviews');
 // Database Connection
 const dbUrl = process.env.DB_URL;
 const dbUrlLocal = 'mongodb://localhost:27017/yelp-camp';
-mongoose.connect(dbUrlLocal, {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
